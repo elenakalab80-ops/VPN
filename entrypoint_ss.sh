@@ -23,7 +23,8 @@ else
   HOST="127.0.0.1"
 fi
 
-CREDENTIALS=$(echo -n "${METHOD}:${PASSWORD}" | base64 | tr -d '\n')
+# URL-safe base64 без padding — лучше распознаётся Outline и другими клиентами
+CREDENTIALS=$(printf '%s' "${METHOD}:${PASSWORD}" | base64 | tr -d '\n=' | tr '+/' '-_')
 SS_LINK="ss://${CREDENTIALS}@${HOST}:${PORT}#Fly-Shadowsocks"
 
 echo ""
