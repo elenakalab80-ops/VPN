@@ -52,11 +52,11 @@ fly logs -a elenakalab80-vpn-01
 
 При push через HTTPS GitHub требует у **Personal Access Token (classic)** отдельную галочку **`workflow`** (она **не** входит в `repo` — это отдельный пункт на странице создания токена).
 
-**Обходной путь без нового токена:** один раз добавьте файл workflow **на сайте GitHub** (вы уже залогинены в браузере):
+**Обходной путь без нового токена:** один раз создайте файл workflow **на сайте GitHub** (вы уже залогинены в браузере):
 
 1. Откройте репозиторий → **Add file** → **Create new file**.
 2. Имя файла: `.github/workflows/fly-deploy.yml`
-3. Вставьте содержимое из файла `fly-deploy.yml` в этом проекте (или скопируйте из соседней папки на Mac) → **Commit changes**.
+3. Скопируйте содержимое из уже существующего в репозитории файла [`.github/workflows/fly-deploy.yml`](https://github.com/elenakalab80-ops/VPN/blob/main/.github/workflows/fly-deploy.yml) (или с локального клона) → **Commit changes**.
 
 ### Fine-grained token
 
