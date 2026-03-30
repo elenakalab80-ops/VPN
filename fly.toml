@@ -1,0 +1,23 @@
+# Имя приложения на Fly.io (уже создано: elenakalab80-vpn-01)
+app = "elenakalab80-vpn-01"
+
+primary_region = "ams"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 8388
+  [[services.ports]]
+    port = 8388
+
+[[services]]
+  protocol = "udp"
+  internal_port = 8388
+  [[services.ports]]
+    port = 8388
+
+[mounts]
+  source = "shadowsocks_data"
+  destination = "/etc/shadowsocks"
